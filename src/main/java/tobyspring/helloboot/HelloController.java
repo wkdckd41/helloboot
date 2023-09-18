@@ -1,12 +1,11 @@
 package tobyspring.helloboot;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Objects;
 
-@RequestMapping("/hello")
+@RestController
 public class HelloController {
          private final HelloService helloService;
 
@@ -14,10 +13,8 @@ public class HelloController {
         this.helloService = helloService;
     }
 
-    @GetMapping
-    @ResponseBody
+    @GetMapping("/hello")
     // Objects.requireNonNull() - null 이라면 예외를 던지고 null 이 아니라면 값을 그대로 리턴해준다.
-    public String hello(String name) {
-        return helloService.sayHello(Objects.requireNonNull(name));
+    public String hello(String name) {return helloService.sayHello(Objects.requireNonNull(name));
     }
 }
