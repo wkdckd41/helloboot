@@ -1,5 +1,6 @@
 package tobyspring.helloboot;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
@@ -23,7 +24,7 @@ public class HelloApiTest {
         // header(content-type) text/plain
         assertThat(res.getHeaders().getFirst(HttpHeaders.CONTENT_TYPE)).startsWith(MediaType.TEXT_PLAIN_VALUE);
         // body Hello Spring
-        assertThat(res.getBody()).isEqualTo("Hello Spring");
+        assertThat(res.getBody()).isEqualTo("*Hello Spring*");
     }
 
     @Test
@@ -36,5 +37,14 @@ public class HelloApiTest {
 
         // status code 200 (응답검증)
         assertThat(res.getStatusCode()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Test
+    void helloDecorator() {
+        HelloDecorator decorator = new HelloDecorator(name -> name);
+
+        String ret = decorator.sayHello("Test");
+
+        Assertions.assertThat(ret).isEqualTo("*Test*");
     }
 }
