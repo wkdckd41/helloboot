@@ -1,4 +1,4 @@
-package tobyspring.helloboot;
+package tobyspring.helloboot.helloboot;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
