@@ -1,9 +1,9 @@
-package tobyspring.helloboot;
+package tobyspring;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import tobyspring.helloboot.helloboot.HelloDecorator;
-import tobyspring.helloboot.helloboot.SimpleHelloService;
+import tobyspring.helloboot.HelloDecorator;
+import tobyspring.helloboot.SimpleHelloService;
 
 public class HelloServiceTest {
     @Test

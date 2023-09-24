@@ -1,8 +1,8 @@
-package tobyspring.helloboot;
+package tobyspring;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import tobyspring.helloboot.helloboot.HelloController;
+import tobyspring.helloboot.HelloController;
 
 public class HelloControllerTest {
     @Test
