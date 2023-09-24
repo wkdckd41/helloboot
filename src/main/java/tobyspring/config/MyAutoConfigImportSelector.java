@@ -6,7 +6,6 @@ import org.springframework.core.type.AnnotationMetadata;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.StreamSupport;
 
 public class MyAutoConfigImportSelector implements DeferredImportSelector {
     private final ClassLoader classLoader;
@@ -19,7 +18,8 @@ public class MyAutoConfigImportSelector implements DeferredImportSelector {
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         List<String> autoConfig = new ArrayList<>();
 
-        for(String candidate : ImportCandidates.load(MyAutoConfiguration.class, classLoader));
-        return StreamSupport.stream(candidates.spliterator(), false).toArray(String[]::new);
+        ImportCandidates.load(MyAutoConfiguration.class, classLoader).forEach(autoConfig::add);
+
+        return autoConfig.toArray(new String[0]);
     }
 }
