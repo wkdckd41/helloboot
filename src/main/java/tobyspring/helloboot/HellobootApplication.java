@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import tobyspring.config.MySpringBootApplication;
 
 @MySpringBootApplication
-public class HelloBootApplication {
+public class HellobootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloBootApplication.class, args);
+        SpringApplication.run(HellobootApplication.class, args);
     }
 }
