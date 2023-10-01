@@ -11,4 +11,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Import(MyConfigurationPropertiesImportSelector.class)
 public @interface EnableMyConfigurationProperties {
+    Class<?> value();
 }
