@@ -1,7 +1,9 @@
 package tobyspring.config.autoconfig;
 
-public class ServerProperties {
+import tobyspring.config.MyConfigurationProperties;
 
+@MyConfigurationProperties(prefix = "server")
+public class ServerProperties {
     private String ContextPath;
 
     private int port;
